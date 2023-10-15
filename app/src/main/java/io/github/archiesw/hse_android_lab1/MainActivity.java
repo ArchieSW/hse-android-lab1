@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.button);
 
         button.setOnClickListener(v -> {
-            String color = editText.getText().toString();
+            String color = editText.getText().toString().trim();
             if (Arrays.stream(AVAILABLE_COLORS).noneMatch((x) -> x.equals(color))) {
                 Toast toast = Toast.makeText(getApplicationContext(), "Напишите один из цветов: " + Arrays.toString(AVAILABLE_COLORS), Toast.LENGTH_LONG);
                 toast.show();
